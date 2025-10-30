@@ -1,0 +1,23 @@
+[project]
+name = "goldsrc-py-igatool"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "AnggaraNothing",email = "anggaranothing.other228@simplelogin.com"}
+]
+license = {text = "LGPL-3.0-or-later"}
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "icecipher (>=1.0,<2.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "cx-freeze (>=8.4.1,<9.0.0)"
+]
