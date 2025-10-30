@@ -16,6 +16,7 @@ If not, see <https://www.gnu.org/licenses/>.
 
 __VERSION__ = '0.1.0'
 __AUTHOR__ = 'AnggaraNothing'
+import sys
 from io import (
     SEEK_SET,
     SEEK_END,
@@ -179,7 +180,7 @@ usage:  {0} unwad infile outpath'''
 
 def help ():
     print(_HELP.format(sys.argv[0]))
-    exit(-1)
+    sys.exit(-1)
 
 
 def main (argv: list[str]):
@@ -231,7 +232,6 @@ def main (argv: list[str]):
 
 
 if __name__ == '__main__':
-    import sys
     print(f'igatool {__VERSION__} by {__AUTHOR__}')
     argc = len(sys.argv)
     if argc != 3 and argc != 4:
