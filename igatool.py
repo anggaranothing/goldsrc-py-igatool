@@ -14,7 +14,7 @@ You should have received a copy of the GNU Lesser General Public License along w
 If not, see <https://www.gnu.org/licenses/>.
 '''
 
-__VERSION__ = '0.1.0'
+__VERSION__ = '0.2.0'
 __AUTHOR__ = 'AnggaraNothing'
 import sys
 from io import (

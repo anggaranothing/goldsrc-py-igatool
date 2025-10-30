@@ -1,6 +1,6 @@
 [project]
 name = "goldsrc-py-igatool"
-version = "0.1.0"
+version = "0.2.0"
 description = ""
 authors = [
     {name = "AnggaraNothing",email = "anggaranothing.other228@simplelogin.com"}
