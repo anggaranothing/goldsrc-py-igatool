@@ -91,12 +91,13 @@ def _cipher (data: bytes, is_encrypt: bool=True):
         result = bytearray(data_size)
         data_view = data_view[4:]
         cipher_offset = 0
-    result_size = len(result)
     cipher = IceKey(4, IGA_KEY)
     cipher_func = cipher.Encrypt if is_encrypt else cipher.Decrypt
     result[cipher_offset:] = cipher_func(data_view)
+    result_size = len(result)
     if not is_encrypt and result_size != data_size:
         print(f'WARNING: Expected length {data_size} bytes, got {result_size}')
+        result = result[:data_size]
     return result
 
 
