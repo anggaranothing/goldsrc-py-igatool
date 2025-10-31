@@ -81,10 +81,11 @@ def _cipher (data: bytes, is_encrypt: bool=True):
     data_view = memoryview(data)
     if is_encrypt:
         data_size = len(data)
-        result = bytearray(alloc_len(8, 4 + data_size))
-        result[:4] = data_size.to_bytes(4, 'little')
-        result[4:data_size] = data
-        data_view = memoryview(result)[4:]
+        result = bytearray(4 + alloc_len(8, data_size))
+        data_view = memoryview(result)
+        data_view[:4] = data_size.to_bytes(4, 'little')
+        data_view = data_view[4:]
+        data_view[:data_size] = data
         cipher_offset = 4
     else:
         data_size = int.from_bytes(data_view[:4], 'little')
